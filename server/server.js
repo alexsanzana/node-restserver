@@ -5,14 +5,17 @@ const mongoose = require('mongoose');
 const app = express();
 const bodyParser = require('body-parser');
 
+
+//=====Estos Son Middlewares======
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
 
-// de esta forma utilizamos los metodos del CRUD del usuario
-app.use(require('./routes/usuario'));
+// Configuracion Global de Rutas
+app.use(require('./routes/index'));
+//=====Estos Son Middlewares======
 
 mongoose.connect(process.env.URLDB, { useNewUrlParser: true, useCreateIndex: true },
     (err, res) => {
