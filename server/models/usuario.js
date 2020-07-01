@@ -55,4 +55,4 @@ usuarioSchema.methods.toJSON = function() {
 // hay que decirle al esquema que utilice un plugin en particular para este schema
 usuarioSchema.plugin(uniqueValidator, { message: '{PATH} Debe ser unico' })
 
-module.exports = mongoose.model('usuario', usuarioSchema);
+module.exports = mongoose.model('Usuario', usuarioSchema);
