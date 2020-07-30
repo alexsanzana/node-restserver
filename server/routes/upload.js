@@ -9,7 +9,7 @@ const path = require('path');
 
 
 //default option
-app.use(fileUpload());
+app.use(fileUpload({ useTempFiles: true }));
 
 app.put('/upload/:tipo/:id', function(req, res) {
 
